@@ -25,7 +25,7 @@ def makeMovie_GWcatalogSize(fps=20, duration=60):
 
 
   
-	image_folder = '/Users/floorbroekgaarden/Projects/GitHub/OtherPlots/GWcatalogMovie/'
+	image_folder = '/Users/floorbroekgaarden/Projects/GitHub/Othercode/GWcatalogMovie/'
 
 	images = []
 
@@ -72,7 +72,7 @@ def makeMovie_GWcatalogSize_log(fps=20, duration=60):
 
 
   
-	image_folder = '/Users/floorbroekgaarden/Projects/GitHub/OtherPlots/GWcatalogMovie/'
+	image_folder = '/Users/floorbroekgaarden/Projects/GitHub/Othercode/GWcatalogMovie/'
 
 	images = []
 
