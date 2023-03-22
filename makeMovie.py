@@ -61,6 +61,44 @@ def makeMovie_GWcatalogSize(fps=20, duration=60):
 
 
 
+def makeMovie_GWcatalogSizeO4(fps=60, duration=50):
+	'''
+	whichRate = 'intrinsic' or 'observed'
+	fps=0.4, frames per second
+	duration = duration of the movie 
+	'''
+
+	image_folder = '/Users/floorbroekgaarden/Projects/GitHub/Othercode/GWcatalogMovie/'
+
+	images = []
+
+	for ind_im  in range(400):
+			images.append(image_folder +   'O4GWcatalogSize_'  + str(ind_im) + '.png')
+
+	image_files = images
+	clip = moviepy.video.io.ImageSequenceClip.ImageSequenceClip(image_files, fps=fps)
+	clip.write_videofile(image_folder+'movie_'+ 'O4GWcatalogSize'  + '.mp4')
+
+	# make also gif:
+	# Create the frames
+	frames = []
+	# imgs = glob.glob("*.png")
+	for i in images:
+	    new_frame = Image.open(i)
+	    frames.append(new_frame)
+	 
+	# Save into a GIF file that loops forever
+	frames[0].save(image_folder+'gif_'+ 'O4GWcatalogSize' +  '.gif', format='GIF',
+	               append_images=frames[1:],
+	               save_all=True,
+	               duration=duration, loop=0)
+
+	print('done')
+	return 
+
+
+
+
 def makeMovie_GWcatalogSize_log(fps=20, duration=60):
 	'''
 	whichRate = 'intrinsic' or 'observed'
@@ -118,16 +156,12 @@ Movie_GWcatalogSize=True
 
 
 
-
-
-
-
-
-# Run rhis using python 3!! 
+# Run this using python 3!! 
 
 if Movie_GWcatalogSize==True:
-	makeMovie_GWcatalogSize()
-	makeMovie_GWcatalogSize_log()
+	makeMovie_GWcatalogSizeO4()
+	# makeMovie_GWcatalogSize()
+	# makeMovie_GWcatalogSize_log()
 
 
 
